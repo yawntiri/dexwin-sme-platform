@@ -61,7 +61,7 @@ function PaymentRequestModal({ employee, cart, total, onClose, onComplete }) {
             <div style={{width:60,height:60,borderRadius:50,background:'var(--purple-dim)',border:'2px solid rgba(167,139,250,0.3)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px'}}>
               <Send size={24} style={{color:'var(--purple)'}}/>
             </div>
-            <div style={{fontFamily:'Outfit',fontWeight:700,fontSize:15,marginBottom:4}}>Sending to Employee App…</div>
+            <div style={{fontFamily:'Inter',fontWeight:700,fontSize:15,marginBottom:4}}>Sending to Employee App…</div>
             <div className="text-secondary text-sm">Contacting {employee.name}'s device</div>
             <div className="animate-spin" style={{width:24,height:24,border:'2px solid var(--border-strong)',borderTop:'2px solid var(--purple)',borderRadius:50,margin:'16px auto 0'}}/>
           </>}
@@ -70,23 +70,23 @@ function PaymentRequestModal({ employee, cart, total, onClose, onComplete }) {
             <div style={{width:60,height:60,borderRadius:50,background:'var(--amber-dim)',border:'2px solid rgba(245,158,11,0.3)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px'}}>
               <Smartphone size={24} style={{color:'var(--amber)'}}/>
             </div>
-            <div style={{fontFamily:'Outfit',fontWeight:700,fontSize:15,marginBottom:4}}>Awaiting Approval</div>
+            <div style={{fontFamily:'Inter',fontWeight:700,fontSize:15,marginBottom:4}}>Awaiting Approval</div>
             <div className="text-secondary text-sm">{employee.name} is reviewing the payment request</div>
             <div style={{marginTop:16,padding:'12px 16px',background:'var(--amber-dim)',border:'1px solid rgba(245,158,11,0.25)',borderRadius:8}}>
-              <div style={{fontFamily:'IBM Plex Mono',fontWeight:500,fontSize:20,color:'var(--amber)'}}>GHS {total.toFixed(2)}</div>
+              <div style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums',fontWeight:500,fontSize:20,color:'var(--amber)'}}>GHS {total.toFixed(2)}</div>
               <div className="text-xs text-muted mt-1">{cart.length} service{cart.length!==1?'s':''}</div>
             </div>
             <div className="animate-pulse" style={{marginTop:12,fontSize:12,color:'var(--amber)'}}>● Waiting for approval…</div>
           </>}
 
           {(stage==='approved'||stage==='done') && <>
-            <div style={{width:60,height:60,borderRadius:50,background:'var(--green-dim)',border:'2px solid rgba(34,197,94,0.3)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px'}}>
+            <div style={{width:60,height:60,borderRadius:50,background:'var(--green-dim)',border:'2px solid rgba(23,177,105,0.3)',display:'flex',alignItems:'center',justifyContent:'center',margin:'0 auto 16px'}}>
               <CheckCircle size={24} style={{color:'var(--green)'}}/>
             </div>
-            <div style={{fontFamily:'Outfit',fontWeight:700,fontSize:15,marginBottom:4,color:'var(--green)'}}>Payment Approved!</div>
+            <div style={{fontFamily:'Inter',fontWeight:700,fontSize:15,marginBottom:4,color:'var(--green)'}}>Payment Approved!</div>
             <div className="text-secondary text-sm">{employee.name} approved the payment</div>
             <div style={{marginTop:16,padding:'12px 16px',background:'var(--green-dim)',border:'1px solid rgba(34,197,94,0.25)',borderRadius:8}}>
-              <div style={{fontFamily:'IBM Plex Mono',fontWeight:500,fontSize:20,color:'var(--green)'}}>GHS {total.toFixed(2)}</div>
+              <div style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums',fontWeight:500,fontSize:20,color:'var(--green)'}}>GHS {total.toFixed(2)}</div>
               <div className="text-xs text-secondary mt-1">Debited from Health Wallet</div>
             </div>
             <div className="mt-3">
@@ -149,7 +149,7 @@ export default function POSMode() {
           <div style={{background:'var(--purple-dim)',border:'1px solid rgba(167,139,250,0.2)',borderRadius:8,padding:'10px 12px'}}>
             <div style={{display:'flex',alignItems:'center',gap:6,marginBottom:4}}>
               <div style={{width:8,height:8,borderRadius:50,background:'var(--green)'}} className="animate-pulse"/>
-              <span style={{fontSize:11,fontFamily:'Outfit',fontWeight:600,color:'var(--green)'}}>Terminal Online</span>
+              <span style={{fontSize:11,fontFamily:'Inter',fontWeight:600,color:'var(--green)'}}>Terminal Online</span>
             </div>
             <div className="text-xs text-muted">Trust Hospital — Accra</div>
             <div className="td-mono text-xs text-secondary">MID-00421-GH</div>
@@ -172,10 +172,10 @@ export default function POSMode() {
             <div className="flex items-center gap-3 mb-5">
               {['Employee Lookup','Select Services','Confirm & Request'].map((s,i)=>(
                 <div key={s} className="flex items-center gap-2">
-                  <div style={{width:22,height:22,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--purple-dim)':'var(--surface-4)',border:`1.5px solid ${step>i+1?'rgba(34,197,94,0.3)':step===i+1?'rgba(167,139,250,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Outfit',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--purple)':'var(--text-muted)'}}>
+                  <div style={{width:22,height:22,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--purple-dim)':'var(--surface-4)',border:`1.5px solid ${step>i+1?'rgba(23,177,105,0.3)':step===i+1?'rgba(167,139,250,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Inter',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--purple)':'var(--text-muted)'}}>
                     {step>i+1?<CheckCircle size={11}/>:i+1}
                   </div>
-                  <span style={{fontSize:12,fontFamily:'Outfit',fontWeight:step===i+1?600:400,color:step===i+1?'var(--text-primary)':'var(--text-muted)'}}>{s}</span>
+                  <span style={{fontSize:12,fontFamily:'Inter',fontWeight:step===i+1?600:400,color:step===i+1?'var(--text-primary)':'var(--text-muted)'}}>{s}</span>
                   {i<2&&<ArrowRight size={12} style={{color:'var(--text-muted)'}}/>}
                 </div>
               ))}
@@ -285,7 +285,7 @@ export default function POSMode() {
                         return (
                           <div key={svc.id} className={`service-item ${inCart?'selected':''}`} onClick={()=>addToCart(svc)}>
                             <div>
-                              <div style={{fontFamily:'Outfit',fontWeight:600,fontSize:12}}>{svc.name}</div>
+                              <div style={{fontFamily:'Inter',fontWeight:600,fontSize:12}}>{svc.name}</div>
                               <div className="text-xs text-muted">{svc.cat}</div>
                             </div>
                             <div style={{textAlign:'right'}}>
@@ -329,8 +329,8 @@ export default function POSMode() {
 
                   <div className="divider"/>
                   <div className="flex items-center justify-between mb-3">
-                    <span style={{fontFamily:'Outfit',fontWeight:700,fontSize:13}}>Total</span>
-                    <span style={{fontFamily:'IBM Plex Mono',fontWeight:700,fontSize:18,color:'var(--purple)'}}>GHS {total.toFixed(2)}</span>
+                    <span style={{fontFamily:'Inter',fontWeight:700,fontSize:13}}>Total</span>
+                    <span style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums',fontWeight:700,fontSize:18,color:'var(--purple)'}}>GHS {total.toFixed(2)}</span>
                   </div>
 
                   {total > parseFloat(selectedEmp.walletBal.replace(/[^0-9.]/g,'')) && (
@@ -376,8 +376,8 @@ export default function POSMode() {
                   ))}
                   <div className="divider"/>
                   <div className="flex items-center justify-between">
-                    <span style={{fontFamily:'Outfit',fontWeight:700}}>Total Charge</span>
-                    <span style={{fontFamily:'IBM Plex Mono',fontWeight:700,fontSize:20,color:'var(--purple)'}}>GHS {total.toFixed(2)}</span>
+                    <span style={{fontFamily:'Inter',fontWeight:700}}>Total Charge</span>
+                    <span style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums',fontWeight:700,fontSize:20,color:'var(--purple)'}}>GHS {total.toFixed(2)}</span>
                   </div>
                 </div>
 

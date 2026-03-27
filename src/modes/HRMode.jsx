@@ -62,10 +62,10 @@ function AddEmployeeModal({ onClose }) {
       <div className="flex gap-2 mb-4" style={{borderBottom:'1px solid var(--border)',paddingBottom:14}}>
         {['Personal Details','Compensation','Review & Invite'].map((s,i)=>(
           <div key={s} className="flex items-center gap-2">
-            <div style={{width:20,height:20,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--blue-dim)':'var(--surface-4)',border:`1.5px solid ${step>i+1?'rgba(34,197,94,0.3)':step===i+1?'rgba(96,165,250,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Outfit',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--blue)':'var(--text-muted)',flexShrink:0}}>
+            <div style={{width:20,height:20,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--blue-dim)':'var(--surface-4)',border:`1.5px solid ${step>i+1?'rgba(34,197,94,0.3)':step===i+1?'rgba(78,90,166,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Inter',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--blue-light)':'var(--text-muted)',flexShrink:0}}>
               {step>i+1?<CheckCircle size={11}/>:i+1}
             </div>
-            <span style={{fontSize:11,color:step===i+1?'var(--text-primary)':'var(--text-muted)',fontFamily:'Outfit',fontWeight:step===i+1?600:400}}>{s}</span>
+            <span style={{fontSize:11,color:step===i+1?'var(--text-primary)':'var(--text-muted)',fontFamily:'Inter',fontWeight:step===i+1?600:400}}>{s}</span>
             {i<2&&<ChevronRight size={11} style={{color:'var(--text-muted)'}}/>}
           </div>
         ))}
@@ -96,7 +96,7 @@ function AddEmployeeModal({ onClose }) {
 
       {step===2 && <>
         <div className="form-row mb-3">
-          <div className="form-group"><label className="form-label">Gross Monthly Salary (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'IBM Plex Mono'}}/></div>
+          <div className="form-group"><label className="form-label">Gross Monthly Salary (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums'}}/></div>
           <div className="form-group"><label className="form-label">Pay Frequency</label>
             <select className="form-select"><option>Monthly</option><option>Bi-weekly</option><option>Weekly</option></select>
           </div>
@@ -264,7 +264,7 @@ function EmployeeList({ setShowAdd, setNav }) {
               <div className="flex items-center gap-2">
                 <div className="emp-avatar">{selected.name.split(' ').map(n=>n[0]).join('')}</div>
                 <div>
-                  <div style={{fontFamily:'Outfit',fontWeight:700,fontSize:14}}>{selected.name}</div>
+                  <div style={{fontFamily:'Inter',fontWeight:700,fontSize:14}}>{selected.name}</div>
                   <div className="text-xs text-secondary">{selected.role}</div>
                 </div>
               </div>
@@ -384,7 +384,7 @@ function PayrollApprovals() {
         <div className="card mt-4">
           <div className="flex items-center justify-between mb-3">
             <div>
-              <div style={{fontFamily:'Outfit',fontWeight:700,fontSize:15}}>March 2026 Payroll Run</div>
+              <div style={{fontFamily:'Inter',fontWeight:700,fontSize:15}}>March 2026 Payroll Run</div>
               <div className="text-xs text-secondary">Prepared by Abena Mensah · 27 Mar 2026 · Run ID: PR-2026-03</div>
             </div>
             <span className="badge badge-amber">Awaiting Sign-off</span>
@@ -416,7 +416,7 @@ function PayrollApprovals() {
       </> : (
         <div className="card" style={{textAlign:'center',padding:48}}>
           <CheckCircle size={40} style={{color:'var(--green)',margin:'0 auto 12px'}}/>
-          <div style={{fontFamily:'Outfit',fontWeight:700,fontSize:16,marginBottom:4}}>Payroll Signed Off</div>
+          <div style={{fontFamily:'Inter',fontWeight:700,fontSize:16,marginBottom:4}}>Payroll Signed Off</div>
           <div className="text-secondary text-sm">Finance admin has been notified. Run ID: PR-2026-03</div>
           <div className="badge badge-green mt-3" style={{display:'inline-flex'}}>Awaiting Disbursement</div>
         </div>
@@ -437,7 +437,7 @@ function LeaveManagement() {
         {[
           {label:'Pending',val:3,color:'var(--amber)'},
           {label:'Approved (Mar)',val:7,color:'var(--green)'},
-          {label:'On Leave Today',val:1,color:'var(--blue)'},
+          {label:'On Leave Today',val:1,color:'var(--blue-light)'},
           {label:'Annual Days Remaining',val:'16.5 avg',color:'var(--teal)'},
         ].map(s=>(
           <div className="card card-sm" key={s.label}>

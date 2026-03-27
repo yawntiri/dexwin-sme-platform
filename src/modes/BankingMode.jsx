@@ -62,7 +62,7 @@ function FundPayrollModal({ onClose }) {
           <div className="form-group mb-3">
             <label className="form-label">Amount (GHS)</label>
             <input className="form-input" placeholder="0.00" value={amount}
-              onChange={e => setAmount(e.target.value)} style={{fontFamily:'IBM Plex Mono',fontSize:18,fontWeight:500}} />
+              onChange={e => setAmount(e.target.value)} style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums',fontSize:18,fontWeight:500}} />
             <span className="text-xs text-secondary mt-2">Payroll pool balance: GHS 42,000.00 · Required: GHS 184,200.00</span>
           </div>
           <div className="form-group mb-3">
@@ -116,7 +116,7 @@ function PaymentModal({ onClose }) {
           <div className="form-group"><label className="form-label">Bank</label>
             <select className="form-select"><option>Ghana Commercial Bank</option><option>Stanbic Bank</option><option>Ecobank</option><option>Fidelity Bank</option><option>Affinity Bank</option></select>
           </div>
-          <div className="form-group"><label className="form-label">Amount (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'IBM Plex Mono'}}/></div>
+          <div className="form-group"><label className="form-label">Amount (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums'}}/></div>
           <div className="form-group" style={{gridColumn:'1/-1'}}><label className="form-label">Narration</label><input className="form-input" placeholder="Payment description…"/></div>
         </div>}
         {payType==='momo' && <div className="form-row">
@@ -124,12 +124,12 @@ function PaymentModal({ onClose }) {
             <select className="form-select"><option>MTN Mobile Money</option><option>Telecel Cash</option><option>AirtelTigo Money</option></select>
           </div>
           <div className="form-group"><label className="form-label">Phone Number</label><input className="form-input" placeholder="024 XXX XXXX"/></div>
-          <div className="form-group"><label className="form-label">Amount (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'IBM Plex Mono'}}/></div>
+          <div className="form-group"><label className="form-label">Amount (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums'}}/></div>
           <div className="form-group"><label className="form-label">Narration</label><input className="form-input" placeholder="Payment description…"/></div>
         </div>}
         {payType==='dexwin' && <div className="form-row">
           <div className="form-group" style={{gridColumn:'1/-1'}}><label className="form-label">Dexwin Username or Phone</label><input className="form-input" placeholder="Search by name or phone…"/></div>
-          <div className="form-group"><label className="form-label">Amount (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'IBM Plex Mono'}}/></div>
+          <div className="form-group"><label className="form-label">Amount (GHS)</label><input className="form-input" placeholder="0.00" style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums'}}/></div>
           <div className="form-group"><label className="form-label">Narration</label><input className="form-input" placeholder="Payment description…"/></div>
         </div>}
         <div className="modal-actions">
@@ -168,11 +168,11 @@ function FXModal({ onClose }) {
           <select className="form-select" style={{width:100}} value={fromCur} onChange={e=>setFromCur(e.target.value)}>
             <option>GHS</option><option>USD</option><option>EUR</option><option>GBP</option>
           </select>
-          <input className="form-input" placeholder="0.00" value={amount} onChange={e=>setAmount(e.target.value)} style={{fontFamily:'IBM Plex Mono',fontSize:16}}/>
+          <input className="form-input" placeholder="0.00" value={amount} onChange={e=>setAmount(e.target.value)} style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums',fontSize:16}}/>
         </div>
       </div>
       <div className="flex items-center justify-center mb-3">
-        <div style={{background:'var(--teal-dim)',borderRadius:99,padding:'6px 12px',display:'flex',gap:6,alignItems:'center',fontSize:12,color:'var(--teal)'}}>
+        <div style={{background:'var(--teal-dim)',borderRadius:99,padding:'6px 12px',display:'flex',gap:6,alignItems:'center',fontSize:12,color:'var(--brand)'}}>
           <RefreshCw size={12}/> 1 USD = {rate} GHS · live rate
         </div>
       </div>
@@ -182,7 +182,7 @@ function FXModal({ onClose }) {
           <select className="form-select" style={{width:100}} value={toCur} onChange={e=>setToCur(e.target.value)}>
             <option>USD</option><option>EUR</option><option>GBP</option><option>GHS</option>
           </select>
-          <input className="form-input" value={converted} readOnly style={{fontFamily:'IBM Plex Mono',fontSize:16,color:'var(--teal)'}}/>
+          <input className="form-input" value={converted} readOnly style={{fontFamily:'Inter',fontVariantNumeric:'tabular-nums',fontSize:16,color:'var(--brand)'}}/>
         </div>
       </div>
       <div className="card card-sm mt-3">
@@ -444,7 +444,7 @@ function Treasury() {
       </div>
       <div className="grid-4 mb-4">
         {[
-          {label:'Total Assets',amount:'5,060,500.00',color:'var(--teal)',icon:<Wallet/>},
+          {label:'Total Assets',amount:'5,060,500.00',color:'var(--brand)',icon:<Wallet/>},
           {label:'Total Liabilities',amount:'184,200.00',color:'var(--red)',icon:<CreditCard/>},
           {label:'Net Position',amount:'4,876,300.00',color:'var(--green)',icon:<TrendingUp/>},
           {label:'Pending Payroll',amount:'184,200.00',color:'var(--amber)',icon:<Zap/>},

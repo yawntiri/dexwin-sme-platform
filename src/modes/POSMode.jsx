@@ -172,7 +172,7 @@ export default function POSMode() {
             <div className="flex items-center gap-3 mb-5">
               {['Employee Lookup','Select Services','Confirm & Request'].map((s,i)=>(
                 <div key={s} className="flex items-center gap-2">
-                  <div style={{width:22,height:22,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--purple-dim)':'var(--surface-4)',border:`1.5px solid ${step>i+1?'rgba(23,177,105,0.3)':step===i+1?'rgba(167,139,250,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Inter',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--purple)':'var(--text-muted)'}}>
+                  <div style={{width:22,height:22,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--purple-dim)':'var(--bg-subtle)',border:`1.5px solid ${step>i+1?'rgba(23,177,105,0.3)':step===i+1?'rgba(112,122,188,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Inter',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--purple)':'var(--text-muted)'}}>
                     {step>i+1?<CheckCircle size={11}/>:i+1}
                   </div>
                   <span style={{fontSize:12,fontFamily:'Inter',fontWeight:step===i+1?600:400,color:step===i+1?'var(--text-primary)':'var(--text-muted)'}}>{s}</span>
@@ -263,7 +263,7 @@ export default function POSMode() {
                   {/* Employee confirmed */}
                   <div className="card card-sm mb-3" style={{background:'var(--purple-dim)',border:'1px solid rgba(167,139,250,0.2)'}}>
                     <div className="flex items-center gap-3">
-                      <div className="emp-avatar" style={{background:'var(--surface-4)'}}>{selectedEmp.photo}</div>
+                      <div className="emp-avatar" style={{background:'var(--bg-subtle)'}}>{selectedEmp.photo}</div>
                       <div style={{flex:1}}>
                         <div className="emp-name">{selectedEmp.name}</div>
                         <div className="emp-detail">{selectedEmp.id} · {selectedEmp.dept}</div>
@@ -356,7 +356,7 @@ export default function POSMode() {
               <div style={{maxWidth:520,margin:'0 auto'}}>
                 <div className="card mb-3">
                   <div className="section-header"><span className="section-title">Confirm Payment Request</span></div>
-                  <div className="flex items-center gap-3 mb-4" style={{padding:'12px',background:'var(--surface-2)',borderRadius:8}}>
+                  <div className="flex items-center gap-3 mb-4" style={{padding:'12px',background:'var(--bg-subtle)',borderRadius:8}}>
                     <div className="emp-avatar">{selectedEmp.photo}</div>
                     <div>
                       <div className="emp-name">{selectedEmp.name}</div>

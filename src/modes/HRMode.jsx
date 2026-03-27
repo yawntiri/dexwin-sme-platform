@@ -62,7 +62,7 @@ function AddEmployeeModal({ onClose }) {
       <div className="flex gap-2 mb-4" style={{borderBottom:'1px solid var(--border)',paddingBottom:14}}>
         {['Personal Details','Compensation','Review & Invite'].map((s,i)=>(
           <div key={s} className="flex items-center gap-2">
-            <div style={{width:20,height:20,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--blue-dim)':'var(--surface-4)',border:`1.5px solid ${step>i+1?'rgba(34,197,94,0.3)':step===i+1?'rgba(78,90,166,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Inter',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--blue-light)':'var(--text-muted)',flexShrink:0}}>
+            <div style={{width:20,height:20,borderRadius:50,background:step>i+1?'var(--green-dim)':step===i+1?'var(--blue-bg)':'var(--bg-subtle)',border:`1.5px solid ${step>i+1?'rgba(34,197,94,0.3)':step===i+1?'rgba(78,90,166,0.3)':'var(--border)'}`,display:'flex',alignItems:'center',justifyContent:'center',fontSize:10,fontFamily:'Inter',fontWeight:700,color:step>i+1?'var(--green)':step===i+1?'var(--blue-light)':'var(--text-muted)',flexShrink:0}}>
               {step>i+1?<CheckCircle size={11}/>:i+1}
             </div>
             <span style={{fontSize:11,color:step===i+1?'var(--text-primary)':'var(--text-muted)',fontFamily:'Inter',fontWeight:step===i+1?600:400}}>{s}</span>
@@ -101,7 +101,7 @@ function AddEmployeeModal({ onClose }) {
             <select className="form-select"><option>Monthly</option><option>Bi-weekly</option><option>Weekly</option></select>
           </div>
         </div>
-        <div className="card card-sm mb-3" style={{background:'var(--surface-2)'}}>
+        <div className="card card-sm mb-3" style={{background:'var(--bg-subtle)'}}>
           <div className="section-title mb-2" style={{fontSize:12}}>Estimated Deductions</div>
           <div className="stat-row"><span className="stat-label">PAYE (20%)</span><span className="stat-value font-mono text-amber">GHS 0.00</span></div>
           <div className="stat-row"><span className="stat-label">SSNIT Tier 1 (5.5%)</span><span className="stat-value font-mono text-amber">GHS 0.00</span></div>
@@ -391,7 +391,7 @@ function PayrollApprovals() {
           </div>
           <div className="grid-4 mb-4">
             {[['Employees','8'],['Gross Total','GHS 58,800.00'],['Total Deductions','GHS 14,800.00'],['Net Pay','GHS 44,000.00']].map(([l,v])=>(
-              <div key={l} style={{padding:'10px 12px',background:'var(--surface-2)',borderRadius:8}}>
+              <div key={l} style={{padding:'10px 12px',background:'var(--bg-subtle)',borderRadius:8}}>
                 <div className="wc-label">{l}</div>
                 <div className="wc-amount" style={{fontSize:16}}>{v}</div>
               </div>

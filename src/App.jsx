@@ -10,9 +10,9 @@ class ErrorBoundary extends Component {
   static getDerivedStateFromError(e) { return { error: e } }
   render() {
     if (this.state.error) return (
-      <div style={{padding:32,color:'#F04437',fontFamily:'Inter',fontSize:13,background:'#131826',borderRadius:8,margin:24,border:'1px solid rgba(240,68,55,0.3)'}}>
+      <div style={{padding:32,color:'#D92C20',fontFamily:'Inter',fontSize:13,background:'#FEF2F1',borderRadius:8,margin:24,border:'1px solid rgba(240,68,55,0.3)'}}>
         <strong>Runtime Error:</strong><br/>{this.state.error.message}<br/><br/>
-        <pre style={{fontSize:11,color:'#8B93A8',whiteSpace:'pre-wrap'}}>{this.state.error.stack}</pre>
+        <pre style={{fontSize:11,color:'#535861',whiteSpace:'pre-wrap'}}>{this.state.error.stack}</pre>
       </div>
     )
     return this.props.children
